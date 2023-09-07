@@ -295,10 +295,10 @@ export class QuizSpaceComponent implements OnInit{
         // toastr 
       }
       else{
-      // Display the success alert
+      // Display success toastr
     
       // Redirect to the home page
-     this.router.navigate(['/home-page']);
+     this.router.navigate(['/list-quizzes']);
       }
     }
 }
