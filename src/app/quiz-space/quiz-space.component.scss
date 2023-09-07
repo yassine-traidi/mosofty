@@ -1,0 +1,321 @@
+
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out {
+  animation: fade-out 1s ease-in-out forwards; /* Apply fade-out animation */
+}
+
+.container-mt-4{
+  padding-left: 250px;
+  background-color:linear-gradient(rgb(221, 221, 250), rgb(183, 179, 227));
+  animation: slide-up 1s ease-in-out forwards;
+}
+
+.list-group-item {
+  background-color: #ffffff;
+  border: 2px solid #e2e2e2;
+  margin-bottom: 0; 
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  color: #333333;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+body{
+  background-color: #453ff4;
+  background-color: #5416a0;
+  background-image: linear-gradient(132deg, #29266b 0%, #1697a0 100%);
+  overflow: hidden;
+}  
+
+.container {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.list-group-item {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 0; /* Remove the margin at the bottom */
+  padding: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.623);
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 10px;
+  line-height: 1.6; /* Adjust line spacing */
+}
+
+.list-group-item h5.mb-3,
+.list-group-item p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.list-group-item{
+  border: 3px solid;
+  max-width: 80%;
+  align-content: center;
+  border-radius: 2%;
+  margin-bottom: 3%;
+}
+
+footer {
+  text-align: center;
+
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.question {
+  font-family: 'Consolas';
+  font-size: 110%;
+  border-radius: 1%;
+}
+
+.answer {
+  font-family: 'Consolas';
+  font-size: 110%;
+  padding: 8px 0;
+  margin: 0 -20px; 
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid;
+  text-align: center;
+  max-width: 99%;
+}
+
+.answer:hover {
+  background-color: #001eff;
+  color: #ffffff;
+}
+
+.answer.selected {
+  background-color: #001eff;
+  color: #ffffff;
+}
+
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  font-size: 1.2em;
+  line-height: 48px;
+  padding-bottom: 48px;
+    color:  #453ff4;
+    background:  #453ff4;
+    background: -moz-linear-gradient(132deg, #453ff4 0%, #5416a0 100%) !important;
+    background: -webkit-linear-gradient(132deg, #453ff4 0%, #5416a0 100%) !important;
+    background: linear-gradient(132deg, #453ff4 0%, #5416a0 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #453ff4;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+  background-color: inherit; 
+  box-shadow: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+          background-color: inherit; 
+          box-shadow: none;
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #453ff4;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, 
+  -webkit-transform .2s ease-in-out;
+}
+/* Your existing styles ... */
+
+/* Apply slide-up animation on hover and focus */
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: white;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-color:  #453ff4;
+  border-radius: 2%;
+  width: 200px;
+  color: #453ff4 ;
+  cursor: pointer;
+  transition: 0.45s;
+  position: relative; /* Add this */
+
+  /* Initial position */
+  top: 0;
+  opacity: 1;
+}
+
+/* Apply slide-up animation on hover and focus */
+.contact-form .submit-btn:hover,
+.contact-form .submit-btn:focus {
+  /* Adjust the position and opacity */
+  top: -10px; /* Slide up by 10px */
+  background: #453ff4;
+  color: white;
+}
+
+
+.form{
+  background-color: #fff;
+  border:2px solid;
+  border-radius: 2%;
+  max-width: 80%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.623);
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.pagination-controls li {
+  width: 35px;
+  height: 35px;
+  border-radius: 50% !important;
+  background: #f8f8f8;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pagination-previous,
+.pagination-next {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #f8f8f8;
+}
+
+button{
+  background:none;
+  border: 2px solid;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em
+}
+
+form.contact-form.row{
+  border: 2px solid;
+  border-color:  #453ff4;
+}
+
+.list-group{
+  padding: 1%;
+}
+
+pre.question{
+  text-align: left;
+  padding-left: 30%;
+  border: 2px solid;
+  margin: 20px;
+}
+
+form.contact-form.row.ng-untouched.ng-pristine.ng-invalid{
+  border-radius:2%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.623);
+}
+
+
+
+
+
+
+
+
+
+
+  
+

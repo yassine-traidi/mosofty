@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <app-navbar></app-navbar>
+    </header>
+    <div class="wrapper">
+        <div class="container-mt-4">
+            <div class="list-group">
+                <ng-container *ngFor="let question of questions | paginate: { itemsPerPage, currentPage: p }; let i=index">
+                    <div class="list-group-item">
+                        <h5 class="mb-3">Question number {{(p - 1) * itemsPerPage + i + 1}}</h5>
+                        <pre class="question">{{question.content}}</pre>
+                        <h5 class="mb-3">What is the correct output?</h5>
+                            <ng-container *ngFor="let answer of question.answers; let j=index">
+                                <ul>
+                                    <li class="answer" [class.selected]="answer.selected" (click)="toggleAnswerSelected(question,answer)"> {{ answer.content}}</li>
+                                </ul>
+                                
+                            </ng-container>
+                    </div>
+                </ng-container>
+                <div class="form" *ngIf="isLastPage">
+                    <section class="get-in-touch">
+                      <h1 class="title">Great job! You've completed all the questions. Please review your answers and when you're ready, submit the quiz by filling out the form below.</h1>
+                      <form class="contact-form row" (ngSubmit)="submit()">
+                        <div class="form-field col-lg-6">
+                          <input [(ngModel)]="user.username" id="name" name="name" class="input-text js-input" type="text" required>
+                          <label class="label" for="name">Name</label>
+                        </div>
+                        <div class="form-field col-lg-6">
+                          <input [(ngModel)]="user.email" id="email" name="email" class="input-text js-input" type="email" required>
+                          <label class="label" for="email">E-mail</label>
+                        </div>
+                        <div class="form-field col-lg-6">
+                          <input [(ngModel)]="user.phone" id="phone" name="phone" class="input-text js-input" type="text" required>
+                          <label class="label" for="phone">Contact Number</label>
+                        </div>
+                        <div class="form-field col-lg-12">
+                          <button type="submit" class="submit-btn" (click)="submit()">Submit</button>
+                        </div>
+                      </form>
+                    </section>
+                  </div>
+                  
+            </div>
+            <div class="mt-8 py-5 flex justify-center items-center">
+                <pagination-controls (pageChange)="updateCurrentQuestions($event); scrollToTop()"></pagination-controls>
+            </div>
+        </div>
+    </div>
+    <footer><app-footer></app-footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
