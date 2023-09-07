@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { timeout } from 'rxjs';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -33,6 +34,7 @@ import { timeout } from 'rxjs';
     NgxPaginationModule,
     FormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot()
 
 
   ],

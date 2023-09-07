@@ -13,6 +13,7 @@ import { flatMap } from 'rxjs/operators';
 import { Quiz } from '../interfaces/quiz.interface';
 import { ScoreService } from '../services/score.service';
 import { Score } from '../interfaces/score.interface';
+import { ToastrService } from 'ngx-toastr/public_api';
 
 
 
@@ -74,7 +75,8 @@ export class QuizSpaceComponent implements OnInit{
 
 
   constructor(private quizService:QuizService,private router:Router,private route:ActivatedRoute,private questionService:QuestionService
-    ,private candidateResponseService:CandidateResponseService,private userService:UserService,private scoreService:ScoreService) {
+    ,private candidateResponseService:CandidateResponseService,private userService:UserService,private scoreService:ScoreService,
+    private toastr:ToastrService) {
     this.route.queryParams.subscribe(params => {
       this.quizId = params['quizId'];
       console.log(this.quizId);
@@ -296,6 +298,7 @@ export class QuizSpaceComponent implements OnInit{
       }
       else{
       // Display success toastr
+      this.toastr.success('Submission successfull !','Sucess');
     
       // Redirect to the home page
      this.router.navigate(['/list-quizzes']);
